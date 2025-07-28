@@ -49,7 +49,7 @@ try:
 
     # Display results
     st.subheader("Heat Load Results")
-    st.write(f"**Sensible Cooling:** {Q_sensible:.2f} kW")
+    st.write(f"**Sensible heating:** {Q_sensible:.2f} kW")
     st.write(f"**Latent evaporation:** {Q_latent:.2f} kW")
     st.write(f"**Superheating:** {Q_superheat:.2f} kW")
     st.write(f"**Total Heat added:** {Q_total:.2f} kW")
