@@ -44,7 +44,7 @@ try:
 
     Q_sensible = m_dot * q_sensible / 1000
     Q_latent = m_dot * q_latent / 1000
-    Q_superheat = m_dot * q_subcool / 1000
+    Q_superheat = m_dot * q_superheat / 1000
     Q_total = Q_sensible + Q_latent + Q_superheat
 
     # Display results
