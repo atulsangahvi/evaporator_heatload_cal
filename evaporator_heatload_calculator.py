@@ -20,8 +20,8 @@ try:
     T_sat = PropsSI("T", "P", P_evap, "Q", 1, fluid)
 
     # h1: superheated vapor or saturated vapor
-    if T1 < T_sat:
-        h1 = PropsSI("H", "P", P_evap, "T", T1, fluid)
+    if T3 < T_sat:
+        h1 = PropsSI("H", "P", P_evap, "T", T3, fluid)
     else:
         h1 = PropsSI("H", "P", P_evap, "Q", 1, fluid)
 
@@ -32,8 +32,8 @@ try:
     h3 = PropsSI("H", "P", P_evap, "Q", 0, fluid)
 
     # h4: subcooled liquid or saturated liquid
-    if T3 > T_sat:
-        h4 = PropsSI("H", "P", P_evap, "T", T3, fluid)
+    if T1 > T_sat:
+        h4 = PropsSI("H", "P", P_evap, "T", T1, fluid)
     else:
         h4 = h3
 
