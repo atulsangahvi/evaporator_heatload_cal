@@ -52,7 +52,7 @@ try:
     st.write(f"**Sensible Cooling:** {Q_sensible:.2f} kW")
     st.write(f"**Latent evaporation:** {Q_latent:.2f} kW")
     st.write(f"**Superheating:** {Q_subcool:.2f} kW")
-    st.write(f"**Total Heat Removed:** {Q_total:.2f} kW")
+    st.write(f"**Total Heat added:** {Q_total:.2f} kW")
 
 except Exception as e:
     st.error(f"Calculation error: {e}")
