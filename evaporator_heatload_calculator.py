@@ -17,16 +17,16 @@ T3 = T_subcool + 273.15    # K
 
 try:
     # Get saturation temperature at condensing pressure
-    T_sat = PropsSI("T", "P", P_evap, "Q", 0, fluid)
+    T_sat = PropsSI("T", "P", P_evap, "Q", 1, fluid)
 
     # h1: superheated vapor or saturated vapor
     if T1 < T_sat:
         h1 = PropsSI("H", "P", P_evap, "T", T1, fluid)
     else:
-        h1 = PropsSI("H", "P", P_evap, "Q", 0, fluid)
+        h1 = PropsSI("H", "P", P_evap, "Q", 1, fluid)
 
     # h2: saturated vapor
-    h2 = PropsSI("H", "P", P_evap, "Q", 1, fluid)
+    h2 = PropsSI("H", "P", P_evap, "Q", 0, fluid)
 
     # h3: saturated vapour
     h3 = PropsSI("H", "P", P_evap, "Q", 0, fluid)
