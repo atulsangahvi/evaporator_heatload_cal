@@ -6,8 +6,8 @@ st.title("Evaporator Refrigerant Heat Load Calculator (R134a & R407C)")
 # User Inputs
 fluid = st.sidebar.selectbox("Select Refrigerant", ["R134a", "R407C"])
 P_evap_bar = st.sidebar.number_input("evaporating Pressure (bar abs)", value=10.00, min_value=1.0, max_value=35.0, step=0.1)
-T_superheat = st.sidebar.number_input("Inlet Superheated Temp (°C)", value=11)
-T_subcool = st.sidebar.number_input("Outlet Subcooled Liquid Temp (°C)", value=5.0)
+T_superheat = st.sidebar.number_input("Outlet Superheated Temp (°C)", value=11)
+T_subcool = st.sidebar.number_input("Inlet Subcooled Liquid Temp (°C)", value=5.0)
 m_dot = st.sidebar.number_input("Mass Flow Rate (kg/s)", value=0.599)
 
 # Convert to SI units
@@ -26,10 +26,10 @@ try:
         h1 = PropsSI("H", "P", P_evap, "Q", 0, fluid)
 
     # h2: saturated vapor
-    h2 = PropsSI("H", "P", P_evap, "Q", 1, fluid)
+    h2 = PropsSI("H", "P", P_evap, "Q", 0, fluid)
 
     # h3: saturated vapour
-    h3 = PropsSI("H", "P", P_evap, "Q", 0, fluid)
+    h3 = PropsSI("H", "P", P_evap, "Q", 1, fluid)
 
     # h4: subcooled liquid or saturated liquid
     if T3 > T_sat:
